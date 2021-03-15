@@ -10,4 +10,4 @@ This will launch the application with the absolute path as the command-line argu
 
 ### Design Justifications
 - The application features an object-oriented programming architecture so that the extensibility is maximised. Moreover, it allows for encapsulation of the data and abstraction of the implementation details, making the attributes more secure and computations more user-friendly.
-- Please also see comments and javadoc for assumptions, preconditions, and postconditions, and data structure justifications. 
+- Please also see comments and javadoc for assumptions, preconditions, postconditions, and data structure justifications. 
