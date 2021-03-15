@@ -1,8 +1,8 @@
 import textfilestats.TextFile;
 
 /**
- * A command-line application that is used as an example application to run the
- * TextFile class methods.
+ * A command-line application that is used as an example application to initialise and
+ * run the TextFile class.
  * 
  * The absolute path to the text file stored on disk is passed as a command-line
  * argument.
