@@ -1,5 +1,5 @@
 # LGIM_Interview_Assignment_3L
-My submission of the technical assignment for the LGIM Graduate Software Engineer position
+My submission of the technical assignment for the LGIM Graduate Software Engineer position.
 
 ### How to run the code.
 The program is a command-line application and should be started via the Main class. One should cd to the bin directory via their terminal and type:
