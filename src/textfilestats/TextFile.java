@@ -288,7 +288,7 @@ public class TextFile {
 
 		BigDecimal bigDividend = new BigDecimal(dividend);
 		BigDecimal bigDivisor = new BigDecimal(divisor);
-		BigDecimal bigAverage = bigDividend.divide(bigDivisor, 1, RoundingMode.HALF_UP);
+		BigDecimal bigAverage = bigDividend.divide(bigDivisor, places, RoundingMode.HALF_UP);
 
 		/* Conversion to double may lose some precision; we assume the accuracy lost is not
 		 * an issue for the numbers produced via analysing text files.
