@@ -28,7 +28,10 @@ import java.util.regex.Pattern;
  * 
  * 1) We assume the text file has zero blank lines before, after, and in the
  *    middle of the text file.
- * 2) The pathToFile path name should the the absolute path to the text file
+ * 
+ * 2) An empty text file is considered to have zero lines.
+ * 
+ * 3) The pathToFile path name should the the absolute path to the text file
  *    on the user's computer.
  * 
  * @author Owen Charles
@@ -105,7 +108,8 @@ public class TextFile {
 	/**
 	 * Returns the number of lines in the text file.
 	 * 
-	 * Precondition: There are no blank lines in the text file.
+	 * Precondition:  There are no blank lines in the text file.
+	 * Precondition:  An empty file has zero lines.
 	 * Postcondition: The number of lines will be returned.
 	 * 
 	 * @return the number of lines in the text file.
@@ -151,36 +155,44 @@ public class TextFile {
 	 * 				  will be returned as a double.
 	 * 
 	 * @return a double representing the average number of letters per word to one
-	 *         decimal place.
+	 *         decimal place. If the file is empty, then 0.0 is returned.
 	 * 		   
 	 */
 	public double averageLettersPerWord() {
-
-		/* Have used wordCount variable here instead of reusing countWords method
-		 * as overhead would negatively effect performance.
-		 */
-		int wordCount = 0;
-		int numberOfLetters = 0;
-
-		try (Scanner scanner = new Scanner(getFile())) {
-
-			// Step 1: Add up all letters and words in the text file.
-			while (scanner.hasNext()) {
-
-				char[] letters = scanner.next().toCharArray();
-				numberOfLetters += letters.length;
-
-				wordCount++;
-
-			}
-
-		} catch (FileNotFoundException e) {
-
-			TextFile.error(e);
-		}
 		
-		// Step 2: Return the average.
-		return TextFile.divideAndRound(numberOfLetters, wordCount, 1);
+		// Defensive progamming: If the text file is empty, then return 0.0.
+		if (getFile().length() == 0) {
+			
+			return 0.0;
+			
+		} else {
+			
+			/* Have used wordCount variable here instead of reusing countWords method
+			 * as overhead would negatively effect performance.
+			 */
+			int wordCount = 0;
+			int numberOfLetters = 0;
+	
+			try (Scanner scanner = new Scanner(getFile())) {
+	
+				// Step 1: Add up all letters and words in the text file.
+				while (scanner.hasNext()) {
+	
+					char[] letters = scanner.next().toCharArray();
+					numberOfLetters += letters.length;
+	
+					wordCount++;
+	
+				}
+	
+			} catch (FileNotFoundException e) {
+	
+				TextFile.error(e);
+			}
+			
+			// Step 2: Return the average.
+			return TextFile.divideAndRound(numberOfLetters, wordCount, 1);
+		}
 	}
 
 	/**
@@ -192,7 +204,8 @@ public class TextFile {
 	 * Precondition 2: We assume there is only one most common letter in the text
 	 *				   document. If there is more than one letter that occurs the
 	 *				   most times, then it is not guaranteed which common letter
-	 *				   will be returned.
+	 *				   will be returned. Moreover, if the file is empty, then 0
+	 *				   is returned.
 	 *
 	 * Postcondition: The most common letter in the text file is returned. 
 	 * 
