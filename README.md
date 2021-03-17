@@ -20,6 +20,7 @@ This will launch the application with the absolute path as the command-line argu
     - "test_file_two.txt" is an empty test case; the text file is empty.
     - "test_file_three.txt" is a test case containing only special characters.
     - "test_file_four.txt" is a test case containing a single letter.
+    - "test_file_five.txt" is a test case containing both alphabetical letters and special characters.
 - interview-assignment-3L.pdf:
     - Is the .pdf detailing the task of the technical assignment.
 
