@@ -16,6 +16,7 @@ public class TextFileTest {
 	private TextFile testFileTwo;
 	private TextFile testFileThree;
 	private TextFile testFileFour;
+	private TextFile testFileFive;
 	
 	@BeforeEach
 	public void constructTestTextFiles() {
@@ -24,6 +25,7 @@ public class TextFileTest {
 		testFileTwo = new TextFile("resources/test_file_two.txt");
 		testFileThree = new TextFile("resources/test_file_three.txt");
 		testFileFour = new TextFile("resources/test_file_four.txt");
+		testFileFive = new TextFile("resources/test_file_five.txt");
 		
 	}
 	
@@ -34,6 +36,7 @@ public class TextFileTest {
 		assertEquals(0, testFileTwo.countWords());
 		assertEquals(3, testFileThree.countWords());
 		assertEquals(1,testFileFour.countWords());
+		assertEquals(4, testFileFive.countWords());
 		
 	}
 	
@@ -44,6 +47,7 @@ public class TextFileTest {
 		assertEquals(0, testFileTwo.countLines());
 		assertEquals(3, testFileThree.countLines());
 		assertEquals(1, testFileFour.countLines());
+		assertEquals(2, testFileFive.countLines());
 	}
 	
 	@Test
@@ -53,6 +57,7 @@ public class TextFileTest {
 		assertEquals(0, testFileTwo.averageLettersPerWord());
 		assertEquals(22.0, testFileThree.averageLettersPerWord());
 		assertEquals(1, testFileFour.averageLettersPerWord());
+		assertEquals(4.8, testFileFive.averageLettersPerWord());
 		
 	}
 	
@@ -65,6 +70,7 @@ public class TextFileTest {
 		assertEquals(0, testFileTwo.computeCommonLetter(regex));
 		assertEquals(0, testFileThree.computeCommonLetter(regex));
 		assertEquals('z', testFileFour.computeCommonLetter(regex));
+		assertEquals('w', testFileFive.computeCommonLetter(regex));
 		
 	}
 }
