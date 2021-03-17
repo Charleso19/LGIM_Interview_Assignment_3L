@@ -15,7 +15,7 @@ This will launch the application with the absolute path as the command-line argu
 - bin:
     - Contains the bytecode.
 -  resources:
-    - Contains sample text files and test cases that are used for the JUnit testing.
+    - Contains a sample text file and test cases that are used for the JUnit testing.
     - "test_file_one.txt" is a normal test case; the text file contains words with punctuation over several lines.
     - "test_file_two.txt" is an empty test case; the text file is empty.
     - "test_file_three.txt" is a test case containing only special characters.
