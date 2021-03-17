@@ -20,6 +20,8 @@ This will launch the application with the absolute path as the command-line argu
     - "test_file_two.txt" is an empty test case; the text file is empty.
     - "test_file_three.txt" is a test case containing only special characters.
     - "test_file_four.txt" is a test case containing a single letter.
+- interview-assignment-3L.pdf:
+    - Is the .pdf detailing the task of the technical assignment.
 
 ### Design Justifications
 - The application features an object-oriented programming architecture so that the extensibility is maximised. Moreover, it allows for encapsulation of the data and abstraction of the implementation details, making the attributes more secure and computations more user-friendly.
